@@ -1,0 +1,67 @@
+/* @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated {
+  animation-fill-mode: both;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+.fadeIn-1s {
+  animation-duration: 1s;
+}
+
+.fadeIn-2s {
+  animation-duration: 2s;
+} */
+
+/* ============ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn-1 {
+  animation: fadeIn 1s ease-in-out;
+}
+.fadeIn-2 {
+    animation: fadeIn 2s ease-in-out;
+  }
+
+/* ================ */
+/* @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animated-h1 {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.animated-p {
+  animation: fadeIn 1.5s ease-in-out;
+} */
+
+/* ============ */
+/* Animasi durasi pada perpindahan slide */
+/* [data-carousel-item] {
+    transition: opacity 1.5s ease-in-out;
+  } */
