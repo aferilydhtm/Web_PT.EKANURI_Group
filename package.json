@@ -1,0 +1,14 @@
+{
+  "name": "pt_eka_nuri",
+  "version": "1.0.0",
+  "description": "website PT EKA NURI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aferil Yudhatama",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  }
+}

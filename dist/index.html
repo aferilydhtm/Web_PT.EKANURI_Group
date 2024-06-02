@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/output.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dropdown_tambahan.css" />
+    <!-- <link rel="stylesheet" href="css/carousel.css" /> -->
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ba5dd8b181.js" crossorigin="anonymous"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+
+    <!-- Data AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+    <title>PT.EKANURI GROUP</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="w-full text-gray-700 bg-blue-800 dark-mode:text-gray-200 dark-mode:bg-gray-800">
+        <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+          <div class="p-4 flex flex-row items-center justify-between">
+            <!-- <a href="#" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Flowtrail UI</a> -->
+            <div class="flex-1 flex justify-between items-center">
+              <img src="img/logo-encnew.jpg" class="w-16 pt-0 md:pt-1 md:w-24 md:ml-8 -ml-2" alt="logo" />
+            </div>
+            <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+              <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 text-white">
+                <path
+                  x-show="!open"
+                  fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                  clip-rule="evenodd"
+                ></path>
+                <path
+                  x-show="open"
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+            <a
+              class="px-4 py-2 mt-2 text-sm text-white font-semibold rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+              href="#about"
+              >About Us</a
+            >
+            <a
+              class="px-4 py-2 mt-2 text-sm text-white font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+              href="#"
+              >Client</a
+            >
+            <a
+              class="px-4 py-2 mt-2 text-sm text-white font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+              href="#"
+              >Services</a
+            >
+            <a
+              class="px-4 py-2 mt-2 text-sm text-white font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+              href="#"
+              >Portofolio</a
+            >
+            <a
+              class="px-4 py-2 mt-2 text-sm text-white font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+              href="#"
+              >Contact Us</a
+            >
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+              <div>
+                <button
+                  @click="open = !open"
+                  class="flex flex-row items-center text-gray-900 bg-gray-200 w-full px-4 py-2 mt-2 text-sm font-semibold text-left rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                >
+                  <span>Busines Unit</span>
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    :class="{'rotate-180': open, 'rotate-0': !open}"
+                    class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1 focus:text-white"
+                  >
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </button>
+              </div>
+              <div
+                x-show="open"
+                x-transition:enter="transition ease-out duration-100"
+                x-transition:enter-start="transform opacity-0 scale-95"
+                x-transition:enter-end="transform opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-75"
+                x-transition:leave-start="transform opacity-100 scale-100"
+                x-transition:leave-end="transform opacity-0 scale-95"
+                class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-50"
+              >
+                <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#"
+                    >Link #1</a
+                  >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#"
+                    >Link #2</a
+                  >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#"
+                    >Link #3</a
+                  >
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <main>
+      <!-- Carousel -->
+      <div id="default-carousel" class="relative w-full" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative h-56 overflow-hidden md:h-96">
+          <!-- Item 1 -->
+          <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+            <img src="img/portofolio/enc1.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+            <div class="absolute inset-x-[0] md:inset-x-[15%] text-center md:text-center text-white pl-12 pr-12 pt-14 md:pl-28 md:pt-36 text-lg font-bold">
+              <h1 class="text-xl md:text-4xl">PT. EKANURI GROUP</h1>
+              <p class="ml-3 mr-3 md:pl-0 md:pr-0">Container</p>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+            <img src="img/portofolio/enc2.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+            <div class="absolute inset-x-[0] md:inset-x-[0] text-center md:text-left text-black pl-12 pr-12 pt-14 md:pl-28 md:pt-36 text-lg font-bold">
+              <h1 class="text-xl md:text-4xl">PT. EKANURI GROUP</h1>
+              <p class="ml-0 mr-3 md:pl-0 md:pr-0">Transportation</p>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+            <img src="img/portofolio/enc3.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+            <div class="absolute inset-x-[0] md:inset-x-[5%] text-center md:text-right text-black pl-12 pr-12 pt-14 md:pl-28 md:pt-36 text-lg font-bold">
+              <h1 class="text-xl md:text-4xl">PT. EKANURI GROUP</h1>
+              <p class="ml-3 mr-0 md:pl-0 md:pr-0">Shorebase</p>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+            <img src="img/portofolio/enc4.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+            <div class="absolute inset-x-[0] md:inset-x-[15%] text-center md:text-center text-black pl-12 pr-12 pt-14 md:pl-28 md:pt-36 text-lg font-bold">
+              <h1 class="text-xl md:text-4xl">PT. EKANURI GROUP</h1>
+              <p class="ml-3 mr-3 md:pl-0 md:pr-0">Warehouse</p>
+            </div>
+          </div>
+        </div>
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          >
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+            </svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          >
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
+      </div>
+
+      <!-- End Carousel -->
+
+      <!-- About Us -->
+      <section class="about section" id="about">
+        <div class="bg-white h-auto">
+          <div class="container mx-auto pt-10 pb-10">
+            <h1 class="text-center text-4xl text-extrabold font-poppins pt-1 md:pt-1 pb-10 md:pb-10 px-20">
+              <strong class="font-semibold tracking-widest text-gray-900">ABOUT US</strong>
+            </h1>
+            <div class="grid grid-cols-1 gap-5 md:gap-16 mb-9 ml-10 mr-10 md:ml-10 md:mr-10 md:grid-cols-2">
+              <div class="md:ml-10">
+                <h3 class="text-2xl font-bold mb-4">PT. EKANURI</h3>
+                <p>
+                  Founded on the simple principle of delivering practical solution to our clients, especially in the oil & gas industries. Our system which is called the EKA NURI TOTAL SOLUTION is a
+                  comprehensive integrated solution between warehouses, transportation, manpower, and support, with professional management to professionally comply with each and every client's
+                  demand.
+                </p>
+              </div>
+              <div>
+                <div>
+                  <p class="text-base pb-2">CONSTRUCTION</p>
+                  <div class="w-78 md:w-11/12 bg-gray-200 rounded-full h-2 dark:bg-gray-700 mb-5">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div>
+                  <p class="text-base pb-2">CONTAINER</p>
+                  <div class="w-78 md:w-11/12 bg-gray-200 rounded-full h-2 dark:bg-gray-700 mb-5">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div>
+                  <p class="text-base pb-2">GENERAL SUPPLIER</p>
+                  <div class="w-78 md:w-11/12 bg-gray-200 rounded-full h-2 dark:bg-gray-700 mb-5">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div>
+                  <p class="text-base pb-2">GOLD CREW CHEMICAL</p>
+                  <div class="w-78 md:w-11/12 bg-gray-200 rounded-full h-2 dark:bg-gray-700 mb-5">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
+                  </div>
+                </div>
+                <div>
+                  <p class="text-base pb-2">SHIPPING</p>
+                  <div class="w-78 md:w-11/12 bg-gray-200 rounded-full h-2 dark:bg-gray-700 mb-5">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div>
+                  <p class="text-base pb-2">TRANSPORTATION</p>
+                  <div class="w-78 md:w-11/12 bg-gray-200 rounded-full h-2 dark:bg-gray-700 mb-5">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
+                  </div>
+                </div>
+                <div>
+                  <p class="text-base pb-2">WAREHOUSE</p>
+                  <div class="w-78 md:w-11/12 bg-gray-200 rounded-full h-2 dark:bg-gray-700 mb-5">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="justify-items-center">
+              <div class="pl-5 pr-5 sm:pl-24 sm:pr-10 md:pl-56 lg:pl-56 pb-10">
+                <iframe class="w-96 sm:w-11/12 md:w-10/12 lg:w-10/12 aspect-video rounded" src="video/intro_ekanuri.mp4"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End About Us -->
+
+      <!-- Client -->
+      <section class="client section" id="client">
+        <div class="bg-gray-300 h-auto">
+          <div class="container mx-auto pt-10 pb-10">
+            <h1 class="text-center text-4xl text-extrabold font-poppins pt-1 md:pt-1 pb-6 md:pb-10 px-20">
+              <strong class="font-semibold tracking-widest text-gray-900">OUR CLIENTS</strong>
+            </h1>
+            <div class="grid grid-cols-1 gap-5 md:gap-16 mb-9 ml-10 mr-10 md:ml-20 md:grid-cols-3 justify-items-center">
+              <div class="pb-7 md:pb-0">
+                <img src="img/client/phe.png" class="" alt="" />
+              </div>
+              <div class="pb-7 md:pb-0">
+                <img src="img/client/cnooc.png" class="w-48" alt="" />
+              </div>
+              <div class="pb-7 md:pb-0">
+                <img src="img/client/pci.png" class="w-36" alt="" />
+              </div>
+              <div class="pb-7 md:pb-0">
+                <img src="img/client/conoco.png" class="w-56" alt="" />
+              </div>
+              <div class="pb-7 md:pb-0">
+                <img src="img/client/medco.png" class="w-56" alt="" />
+              </div>
+              <div class="pb-7 md:pb-0">
+                <img src="img/client/unocal.png" class="w-56" alt="" />
+              </div>
+              <div class="pb-7 md:pb-0">
+                <img src="img/client/kondur.png" class="w-56" alt="" />
+              </div>
+              <div class="pb-7 md:pb-0">
+                <img src="img/client/cosl.png" class="w-56" alt="" />
+              </div>
+              <div class="pb-7 md:pb-0">
+                <img src="img/client/premier.png" class="w-56" alt="" />
+              </div>
+              <div class="pb-7 md:pb-0">
+                <img src="img/client/kuwait.png" class="w-48" alt="" />
+              </div>
+              <div class="pb-7 md:pb-0">
+                <img src="img/client/bp.png" class="w-36" alt="" />
+              </div>
+              <div class="pb-7 md:pb-0">
+                <img src="img/client/starenergy.png" class="w-48" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Client -->
+
+      <!-- Services -->
+      <section class="services section" id="services">
+        <div class="bg-white h-auto">
+          <div class="container mx-auto pt-10 pb-10">
+            <h1 class="text-center text-4xl text-extrabold pt-1 md:pt-1 pb-6 md:pb-10 px-20">
+              <strong class="font-semibold tracking-widest text-gray-900">OUR SERVICES</strong>
+            </h1>
+            <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-16 mb-9 ml-10 mr-10 md:ml-20 text-center">
+              <div class="border bg-white shadow-lg rounded" data-aos="fade-up">
+                <div class="flex flex-row overflow-hidden pt-3 pb-2 justify-center">
+                  <img src="img/service/kontruksi.png" class="w-56" alt="gambar" />
+                </div>
+                <div class="pl-5 pr-5">
+                  <h1 class="pl-2 md:pl-4 pr-2 md:pr-4 font-extrabold text-sm md:text-lg">Construction</h1>
+                  <p class="pt-2 pb-5">
+                    PT. Eka Nuri provides construction service to companies who recognize the value of a partner who works diligently and creatively to find the best possible solution for each
+                    particular project. We have delivered the best value in building services by placing expert construction professionals on every project undertaken.
+                  </p>
+                </div>
+              </div>
+              <div class="border bg-white shadow-lg rounded" data-aos="fade-up">
+                <div class="flex flex-row overflow-hidden pt-3 pb-2 justify-center">
+                  <img src="img/service/container.png" class="w-56" alt="gambar" />
+                </div>
+                <div class="pl-5 pr-5">
+                  <h1 class="pl-2 md:pl-4 pr-2 md:pr-4 font-extrabold text-sm md:text-lg">Container</h1>
+                  <p class="pt-2 pb-5">
+                    PT. Eka Nuri container stacking yard is a 37,000 square meter site that is able to accomodate at least 3,700 TEUs (measurement unit of a single standard 20-foot container). With
+                    such a huge area, we can easily provide separate blocks for each customer under FIFO system.
+                  </p>
+                </div>
+              </div>
+              <div class="border bg-white shadow-lg rounded" data-aos="fade-up">
+                <div class="flex flex-row overflow-hidden pt-3 pb-2 justify-center">
+                  <img src="img/service/shipping.png" class="w-56" alt="gambar" />
+                </div>
+                <div class="pl-5 pr-5 pt-2">
+                  <h1 class="pl-2 md:pl-4 pr-2 md:pr-4 font-extrabold text-sm md:text-lg">Shipping</h1>
+                  <p class="pt-2 pb-5">
+                    Best commitment to our customers would not be achieved without technology and professionalism. As the technology develops and makes changes to the world's behavior, professionalism
+                    is needed to adapt with the current trends.
+                  </p>
+                </div>
+              </div>
+              <div class="border bg-white shadow-lg rounded" data-aos="fade-up">
+                <div class="flex flex-row overflow-hidden pt-3 pb-2 justify-center">
+                  <img src="img/service/petikemas.png" class="w-56" alt="gambar" />
+                </div>
+                <div class="pl-5 pr-5">
+                  <h1 class="pl-2 md:pl-4 pr-2 md:pr-4 font-extrabold text-sm md:text-lg">Transportation</h1>
+                  <p class="pt-2 pb-5">
+                    FLEXITANK A Flexitank is a bulk liquid container constructed from a woven nylon or polyester coated on both sides with syntthetic rubber or thermoplastic material with a capacity
+                    of up to 23 cubic metres. Dependent on the specific gravity of the liquid, this modern vehicle of intermodal transportation converts a standard 20' dry container into a bulk liquid
+                    container capable of carrying up to 21.5 tonnes of non-corrosive and non hazardous liquid product.
+                  </p>
+                </div>
+              </div>
+              <div class="border bg-white shadow-lg rounded" data-aos="fade-up">
+                <div class="flex flex-row overflow-hidden pt-3 pb-2 justify-center">
+                  <img src="img/service/warehouse.png" class="w-56" alt="gambar" />
+                </div>
+                <div class="pl-5 pr-5">
+                  <h1 class="pl-2 md:pl-4 pr-2 md:pr-4 font-extrabold text-sm md:text-lg">Warehouse</h1>
+                  <p class="pt-2 pb-5">
+                    PT. Eka Nuri appreciates the value and importance, that our customers place on high quality warehousing facilities. As a result, we are continually evaluating our current
+                    facilities and upgrading them whenever necessary.In recent times, we have expanded our warehouse space and we have completely restructured the monitoring of our warehouse
+                    procedures to ensure security, facilitate tracking, handling and retrieval. We have also taken every possible precaution to safeguard your goods with a 24 hour security system as
+                    well as a firefighting system and strictly monitored pest control.Currently we have 5 warehouses located around Kali Japat, a small river in Tanjung Priok area - main harbour of
+                    the City of Jakarta.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Services -->
+
+      <!-- Portofolio -->
+      <section class="portofolio section" id="portofolio">
+        <div class="bg-white h-auto">
+          <div class="container mx-auto pt-10 pb-10">
+            <h1 class="text-center text-4xl text-extrabold pt-1 md:pt-1 pb-6 md:pb-10 px-20">
+              <strong class="font-semibold tracking-widest text-gray-900">PORTOFOLIO</strong>
+            </h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-16 mb-9 ml-10 mr-10 md:ml-20 text-center">
+              <div class="relative">
+                <img src="img/portofolio/enc1.png" alt="Image 1" class="w-full h-auto cursor-pointer hover:scale-105 transition-transform duration-200" onclick="openModal(this)" />
+              </div>
+              <div class="relative">
+                <img src="img/portofolio/enc2.png" alt="Image 2" class="w-full h-auto cursor-pointer hover:scale-105 transition-transform duration-200" onclick="openModal(this)" />
+              </div>
+              <div class="relative">
+                <img src="img/portofolio/enc3.png" alt="Image 3" class="w-full h-auto cursor-pointer hover:scale-105 transition-transform duration-200" onclick="openModal(this)" />
+              </div>
+              <div class="relative">
+                <img src="img/portofolio/enc4.png" alt="Image 4" class="w-full h-auto cursor-pointer hover:scale-105 transition-transform duration-200" onclick="openModal(this)" />
+              </div>
+              <div class="relative">
+                <img src="img/portofolio/enc5.png" alt="Image 5" class="w-full h-auto cursor-pointer hover:scale-105 transition-transform duration-200" onclick="openModal(this)" />
+              </div>
+              <div class="relative">
+                <img src="img/portofolio/enc6.png" alt="Image 6" class="w-full h-auto cursor-pointer hover:scale-105 transition-transform duration-200" onclick="openModal(this)" />
+              </div>
+              <div class="relative">
+                <img src="img/portofolio/enc7.png" alt="Image 7" class="w-full h-auto cursor-pointer hover:scale-105 transition-transform duration-200" onclick="openModal(this)" />
+              </div>
+              <div class="relative">
+                <img src="img/portofolio/enc8.png" alt="Image 8" class="w-full h-auto cursor-pointer hover:scale-105 transition-transform duration-200" onclick="openModal(this)" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Modals -->
+      <div id="myModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden">
+        <div class="relative">
+          <span class="absolute top-0 right-0 text-white text-4xl cursor-pointer p-2" onclick="closeModal()">&times;</span>
+          <img class="max-w-md max-h-md sm:max-w-md sm:max-h-md md:max-w-xl md:max-h-xl lg:max-w-3xl lg:max-h-3xl" id="modalImage" />
+        </div>
+      </div>
+      <!-- End Modals -->
+      <!-- End Portofolio -->
+
+      <!-- Contact Us -->
+      <!-- End Contact Us -->
+    </main>
+
+    <footer>
+      <div class="bg-blue-800 h-auto">
+        <div class="container mx-auto">
+          <p class="text-white text-center pt-10 pb-10">
+            Copyright © PT. Ekanuri
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+
+    <!-- Navbar -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="js/navbar.js"></script>
+
+    <!-- Modals Image -->
+    <script src="js/modalsImage.js"></script>
+
+    <!-- JS Data AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <!-- Up btn -->
+    <script src="js/up_btn.js"></script>
+    <script>
+      up({});
+    </script>
+
+    <!-- Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <!-- <script src="js/carousel.js"></script> -->
+  </body>
+</html>
